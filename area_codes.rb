@@ -4,13 +4,14 @@ dial_book = {
   "sanjose" => "408",
   "sanfrancisco" => "301",
 }
+puts dial_book
 
 def get_city_names(somehash)
-  return somehash.keys
+  somehash.keys
 end
 
 def get_area_code(somehash, key)
-  return somehash[key] if somehash.key?(key)
+  somehash[key] if somehash.key?(key)
 end
 
 counter = 0
@@ -19,8 +20,7 @@ while counter < 3
   answer = gets.chomp.downcase
   break if answer != "y"
   city_name = get_city_names(dial_book)
-  puts "we have cities: "
-  city_name.each { |city| puts city }
+  puts get_city_names(dial_book)
 
   puts "select a city"
   selected_city = gets.chomp.downcase
